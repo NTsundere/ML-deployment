@@ -2,8 +2,8 @@ from flask import Flask, render_template, request
 import pickle
 
 app = Flask(__name__)
-cv = pickle.load(open("models/cv.pkl"))
-clf = pickle.load(open("models/clf.pkl"))
+cv = pickle.load(open("models/cv.pkl", "rb"))
+clf = pickle.load(open("models/clf.pkl", "rb"))
 
 @app.route("/")
 def home():
@@ -18,4 +18,4 @@ def predict():
     return render_template("index.html", prediction=prediction, email=email)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
