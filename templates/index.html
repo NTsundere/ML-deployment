@@ -1,9 +1,36 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>My First Webpage</title>
+    <title>
+        Email Spam Classifier
+    </title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        button {
+            color: aliceblue;
+            background-color: blue;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Hello, World123213312312312321! From Template</h1>
-</body>
+      <h1>Email Spam Classifier</h1>
+      <div>
+          <form method="POST">
+              <textarea rows="12" cols="60" name="content" placeholder="Enter your email here"
+              value="{{ text }}">{{ text }}</textarea>
+              <div>
+                  <button type="submit">Submit</button>
+              </div>
+          </form>
+      </div>
+      <div>
+          <p id="display">{{ text }}</p>
+      </div>
+  </body>
+
 </html>
